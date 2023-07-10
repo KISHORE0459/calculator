@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tor.css">
+    <title>CALCULATOR</title>
+</head>
+<body>
+    
+    <div id="whole">
+        <h2> KISHORE CALCULATOR</h2>
+        <input type="text" placeholder="0" class="input" id="input">
+        <div id="calculator">    
+            <button onclick="sqrt()" class="button">SQRT</button>
+            <button onclick="square()" class="button">x^2</button>
+            <button onclick="inverse()" class="button">1/x</button>
+            <button onclick="display('%')" class="button">%</button>
+            <button onclick="cl()" class="button">CLR</button>
+            <button onclick="cl()" class="button">AC</button>
+            <button onclick="del()" class="button">DEL</button>
+            <button onclick="display('/')" class="button">/</button>
+            <button onclick="display('7')" class="button">7</button>
+            <button onclick="display('8')" class="button">8</button>
+            <button onclick="display('9')" class="button">9</button>
+            <button onclick="display('*')" class="button">*</button>
+            <button onclick="display('4')" class="button">4</button>
+            <button onclick="display('5')" class="button">5</button>
+            <button onclick="display('6')" class="button">6</button>
+            <button onclick="display('-')" class="button">-</button>
+            <button onclick="display('1')" class="button">1</button>
+            <button onclick="display('2')" class="button">2</button>
+            <button onclick="display('3')" class="button">3</button>
+            <button onclick="display('+')" class="button">+</button>
+            <button onclick="display('+-')" class="button">+-</button>
+            <button onclick="display('0')" class="button">0</button>
+            <button onclick="display('.')" class="button">.</button>
+            <button onclick="calculate()" class="button">=</button>
+        </div>
+    </div>
+    <script>
+        let answer=document.getElementById("input");
+        function display(num)
+        {
+            if(answer.value=="err")
+            {
+                answer.value="0";
+            }
+            answer.value+=num;
+        }
+        function calculate()
+        {
+            try{
+                answer.value=eval(answer.value);
+            }
+            catch(err)
+            {
+                answer.value="err";
+            }
+        }
+        function cl()
+        {
+            answer.value="";
+        }
+        function sqrt()
+        {
+            answer.value=Math.sqrt(answer.value);
+        }
+        function square()
+        {
+            answer.value=answer.value*answer.value;
+        }
+        function inverse()
+        {
+            answer.value=1/answer.value;
+        }
+        function del()
+        {
+            answer.value=answer.value.slice(0,-1);
+        }
+    </script>
+</body>
+</html>
